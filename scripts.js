@@ -76,9 +76,26 @@ let totalAmount = 0
             </div>
         </div>
     `;
+    totalAmount += item.quantity * item.price
     cartWithItems.innerHTML += cartHTML
     });
 
     cartQuantity.textContent = cart.reduce((acc, item) => acc + item.quantity, 0)
+
+    let totalHTML = `
+        <div class="total-container">
+            <p>Order Total</p>
+            <h1>$${totalAmount.toFixed(2)}</h1>
+        </div>
+
+        <div class="confirm-order-container">
+            <button class = "confirm-order-btn">Confirm Your Order</button>
+        </div>
+    `;
+
+    cartWithItems.innerHTML += totalHTML
+}
+
+function displayConfirmedOrder(){
 
 }
