@@ -12,7 +12,7 @@ products.forEach((product) => {
                 </picture>
                 
             </div>
-            <button class="add-to-cart-btn">Add To Cart</button>
+            <button class="add-to-cart-btn" data-product-name = "${product.name}" data-product-price = "${product.price}">Add To Cart</button>
             <div class="product-details">
                 <p class="product-category">${product.category}</p>
                 <p class="product-name">${product.name}</p>
@@ -23,3 +23,12 @@ products.forEach((product) => {
 
     document.querySelector(".products-grid-container").innerHTML = productsHTML
 });
+
+const addButtons = document.querySelectorAll(".add-to-cart-btn");
+addButtons.forEach((addButton) => {
+    addButton.addEventListener("click", () => {
+        const productName = addButton.dataset.productName;
+        const productPrice = addButton.dataset.productPrice;
+        
+    })
+})
