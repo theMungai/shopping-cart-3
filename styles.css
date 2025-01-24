@@ -41,3 +41,8 @@ body{
 .cart-container{
     flex-basis: 25%;
 }
+
+.cart-container .empty-cart{
+    padding: 20px;
+    text-align: center;
+}
