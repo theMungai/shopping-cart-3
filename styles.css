@@ -46,3 +46,32 @@ body{
     padding: 20px;
     text-align: center;
 }
+
+.cart-with-items {
+    padding: 20px;
+}
+
+.cart-added-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.added-items-details .quantity-and-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.total-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.confirm-order-container{
+    text-align: center;
+    margin: 20px 0px;
+}

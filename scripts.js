@@ -16,10 +16,10 @@ products.forEach((product) => {
             <div class="product-details">
                 <p class="product-category">${product.category}</p>
                 <p class="product-name">${product.name}</p>
-                <p class="product-price">$${product.price}</p>
+                <p class="product-price">$${product.price.toFixed(2)}</p>
             </div>                    
         </div>
     `;
 
     document.querySelector(".products-grid-container").innerHTML = productsHTML
-})
+});
