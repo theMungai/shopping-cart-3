@@ -45,8 +45,37 @@ addButtons.forEach((addButton) => {
             })
     
         }
-
-        
-        console.log(cart)
+        updateCart()
     })
-})
+});
+
+const cartWithItems = document.querySelector(".cart-with-items");
+const emptycart = document.querySelector(".empty-cart");
+let cartHTML;
+cartWithItems.innerHTML = ""
+let totalAmount = 0
+function updateCart(){
+    cart.forEach((item) => {
+       cartHTML = `
+        <div class="cart-added-items">
+            <div class="added-items-details">
+                <p class="added-item-name">${item.name}</p>
+                <div class="quantity-and-price">
+                    <p class="item-quantity">${item.quantity}x</p>
+                    <p class="price-per-item">@$${(item.price * 1).toFixed(2)}</p>
+                    <p class="quantity-and-price-product">${(item.quantity * item.price).toFixed()}</p>
+                </div>
+            </div>
+
+            <div class="remove-button-container">
+                <button class="remove-button">
+                    <img src="/images/icon-remove-item.svg" alt="">
+                </button>
+                
+            </div>
+        </div>
+    `;
+    })
+    cartWithItems.innerHTML += cartHTML
+
+}
