@@ -30,5 +30,6 @@ addButtons.forEach((addButton) => {
         const productName = addButton.dataset.productName;
         const productPrice = addButton.dataset.productPrice;
         
+
     })
 })
