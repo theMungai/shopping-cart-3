@@ -75,3 +75,49 @@ body{
     text-align: center;
     margin: 20px 0px;
 }
+
+.popup-container{
+    background-color: rgba(0, 0, 0, 0.719);
+    width: 100%;
+    min-height: 100vh;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    display: none;
+}
+
+.pop-up-details {
+    width: 30%;
+    max-height: 80vh; 
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.items-confirmed{
+    margin: 30px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image-quantity-and-price{
+    display: flex;
+    column-gap: 1rem;
+}
+
+.quantity-price{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.thumbnail-container img{
+    width: 40px;
+}

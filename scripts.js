@@ -94,8 +94,65 @@ let totalAmount = 0
     `;
 
     cartWithItems.innerHTML += totalHTML
+
+    const confirmButton = document.querySelector(".confirm-order-btn")
+    confirmButton.addEventListener("click", () => {
+        displayConfirmedOrder(totalAmount)
+    })
 }
 
-function displayConfirmedOrder(){
 
+function displayConfirmedOrder(totalAmount){
+    const popDialog = document.querySelector(".popup-container");
+    popDialog.style.display ="flex"
+    let modalHTML = `
+        <div class="pop-up-details">
+            <div class="pop-up-header">
+                <img src="images/icon-order-confirmed.svg" alt="">
+                <h1 style="color:hsl(14, 65%, 9%) ;">Order Confirmed</h1>
+                <p style="color:hsl(7, 20%, 60%) ;">We hope you enjoy your food</p>
+            </div>
+    `;
+
+    cart.forEach((item) => {
+        const product = products.find((product) => product.name === item.name)
+        modalHTML += `
+             <div class="items-confirmed">
+                <div class="image-quantity-and-price">
+                    <div class="thumbnail-container">
+                        <img src="${product.image.thumbnail}" alt="">
+                    </div>
+
+                    <div class="confirmed-product-name-quantity">
+                        <p>${item.name}</p>
+                        <div class="quantity-price">
+                            <p>${item.quantity}x</p>
+                            <p>@$${(item.price * 1).toFixed(2)}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="confirmed-total-per-item">
+                    <p>$${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+            </div>
+        
+        `;
+    });
+
+    modalHTML += `
+            <div class="total">
+                <p>Order Total</p>
+                <h1>$${totalAmount.toFixed(2)}</h1>
+            </div>
+
+            <div class="carbon-neutral">
+                <img src="images/icon-carbon-neutral.svg" alt="">
+                <p>This is a <span>carbon-neutral</span> delivery</p>
+            </div>
+            <button class="order-button js-start-new-order">Start New Order</button>
+        </div>
+    `;
+    modalContainer.innerHTML = modalHTML
 }
