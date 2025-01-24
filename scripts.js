@@ -1,5 +1,6 @@
 let productsHTML = "";
 
+const cart = []
 products.forEach((product) => {
     productsHTML += `
         <div class="products-grid-cell">
@@ -30,6 +31,22 @@ addButtons.forEach((addButton) => {
         const productName = addButton.dataset.productName;
         const productPrice = addButton.dataset.productPrice;
         
+        // Checking if the product, already exists in the cart
+        const matchingItem = cart.find((item) => item.name === productName)
 
+        if(matchingItem){
+            matchingItem.quantity += 1
+        }
+        else{
+            cart.push({
+                name : productName,
+                price : productPrice,
+                quantity : 1
+            })
+    
+        }
+
+        
+        console.log(cart)
     })
 })
