@@ -103,10 +103,11 @@ let totalAmount = 0
 
 
 function displayConfirmedOrder(totalAmount){
-    const popDialog = document.querySelector(".popup-container");
-    popDialog.style.display ="block"
+    const popDialog = document.querySelector(".pop-up-details");
+    const popContainer = document.querySelector(".popup-container")
+    popContainer.style.display ="block"
     let modalHTML = `
-        <div class="pop-up-details">
+        
             <div class="pop-up-header">
                 <img src="images/icon-order-confirmed.svg" alt="">
                 <h1 style="color:hsl(14, 65%, 9%) ;">Order Confirmed</h1>
@@ -138,7 +139,6 @@ function displayConfirmedOrder(totalAmount){
                     <p>$${(item.price * item.quantity).toFixed(2)}</p>
                 </div>
             </div>
-            
         
         `;
     });
@@ -154,7 +154,6 @@ function displayConfirmedOrder(totalAmount){
                 <p>This is a <span>carbon-neutral</span> delivery</p>
             </div>
             <button class="order-button js-start-new-order">Start New Order</button>
-        </div>
     `;
 
     

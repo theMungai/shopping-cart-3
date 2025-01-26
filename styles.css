@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    outline: 2px solid red;
 }
 
 body{
@@ -150,4 +149,5 @@ body{
     font-size: 1rem;
     font-family: "Red Hat Text";
     cursor: pointer;
+
 }
