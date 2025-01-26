@@ -104,7 +104,7 @@ let totalAmount = 0
 
 function displayConfirmedOrder(totalAmount){
     const popDialog = document.querySelector(".popup-container");
-    popDialog.style.display ="flex"
+    popDialog.style.display ="block"
     let modalHTML = `
         <div class="pop-up-details">
             <div class="pop-up-header">
@@ -112,12 +112,13 @@ function displayConfirmedOrder(totalAmount){
                 <h1 style="color:hsl(14, 65%, 9%) ;">Order Confirmed</h1>
                 <p style="color:hsl(7, 20%, 60%) ;">We hope you enjoy your food</p>
             </div>
+            <div class="items-confirmed">
     `;
 
     cart.forEach((item) => {
         const product = products.find((product) => product.name === item.name)
         modalHTML += `
-             <div class="items-confirmed">
+             
                 <div class="image-quantity-and-price">
                     <div class="thumbnail-container">
                         <img src="${product.image.thumbnail}" alt="">
@@ -137,6 +138,7 @@ function displayConfirmedOrder(totalAmount){
                     <p>$${(item.price * item.quantity).toFixed(2)}</p>
                 </div>
             </div>
+            
         
         `;
     });
@@ -154,5 +156,7 @@ function displayConfirmedOrder(totalAmount){
             <button class="order-button js-start-new-order">Start New Order</button>
         </div>
     `;
-    modalContainer.innerHTML = modalHTML
+
+    
+    popDialog.innerHTML = modalHTML
 }
